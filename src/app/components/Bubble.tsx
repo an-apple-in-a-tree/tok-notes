@@ -6,6 +6,8 @@ const Bubble = () => {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentMountRef = mountRef.current;
+
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x030026);
 
@@ -23,8 +25,8 @@ const Bubble = () => {
     renderer.setSize(width, height);
 
     // Append the renderer to the mount div
-    if (mountRef.current) {
-      mountRef.current.appendChild(renderer.domElement);
+    if (currentMountRef) {
+      currentMountRef.appendChild(renderer.domElement);
     }
 
     // Create sphere geometry
@@ -74,8 +76,8 @@ const Bubble = () => {
     animate();
 
     return () => {
-      if (mountRef.current && mountRef.current.firstChild) {
-        mountRef.current.removeChild(mountRef.current.firstChild);
+      if (currentMountRef && currentMountRef.firstChild) {
+        currentMountRef.removeChild(currentMountRef.firstChild);
       }
     };
   }, []);

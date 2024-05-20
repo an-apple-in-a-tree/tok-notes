@@ -17,7 +17,7 @@ const Knowledge = () => {
       >
         Scope:
       </h2>
-      <div className="grid grid-cols-4 grid-rows-2 gap-4 my-8 mx-8 text-white]">
+      <div className="grid grid-cols-4 grid-rows-2 gap-4 my-8 mx-8 text-white">
         <label className="swap">
           <input type="checkbox" />
           <div className="swap-on">
@@ -686,7 +686,7 @@ const Knowledge = () => {
             <div className="card w-full h-32 bg-gradient-to-r from-[#fc44ff] to-[#8400ff] shadow-xl">
               <div className="card-body">
                 <p>
-                  If you believe your medicine will "work" even if it is fake.
+                  If you believe your medicine will \"work\" even if it is fake.
                 </p>
               </div>
             </div>
