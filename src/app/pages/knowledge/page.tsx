@@ -686,7 +686,7 @@ const Knowledge = () => {
             <div className="card w-full h-32 bg-gradient-to-r from-[#fc44ff] to-[#8400ff] shadow-xl">
               <div className="card-body">
                 <p>
-                  If you believe your medicine will \"work\" even if it is fake.
+                  If you believe your medicine will &quot;work&quot; even if it is fake.
                 </p>
               </div>
             </div>
