@@ -84,16 +84,16 @@ const Bubble = () => {
     <div
       ref={mountRef}
       style={{
-        width: '600px', // Increased width for longer length
-        height: '300px', // Decreased height for shorter height
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        top: '80%',
-        left: '70%',
-        transform: 'translate(-50%, -50%)',
-        margin: 'auto', // Adjust the margin to position the canvas
+        width: "600px", // Increased width for longer length
+        height: "300px", // Decreased height for shorter height
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "absolute",
+        top: "80%",
+        left: "70%",
+        transform: "translate(-50%, -50%)",
+        margin: "auto", // Adjust the margin to position the canvas
       }}
     />
   );
