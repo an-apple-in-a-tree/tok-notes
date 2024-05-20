@@ -23,7 +23,9 @@ const Bubble = () => {
     renderer.setSize(width, height);
 
     // Append the renderer to the mount div
-    mountRef.current?.appendChild(renderer.domElement);
+    if (mountRef.current) {
+      mountRef.current.appendChild(renderer.domElement);
+    }
 
     // Create sphere geometry
     const geometry = new THREE.SphereGeometry(1, 32, 32);
@@ -72,8 +74,8 @@ const Bubble = () => {
     animate();
 
     return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current && mountRef.current.firstChild) {
+        mountRef.current.removeChild(mountRef.current.firstChild);
       }
     };
   }, []);
@@ -81,16 +83,18 @@ const Bubble = () => {
   return (
     <div
       ref={mountRef}
-      style={{ width: '600px', // Increased width for longer length
-      height: '300px', // Decreased height for shorter height
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      position: 'absolute',
-      top: '80%',
-      left: '70%',
-      transform: 'translate(-50%, -50%)',
-      margin: 'auto' }} // Adjust the margin to position the canvas
+      style={{
+        width: '600px', // Increased width for longer length
+        height: '300px', // Decreased height for shorter height
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        top: '80%',
+        left: '70%',
+        transform: 'translate(-50%, -50%)',
+        margin: 'auto', // Adjust the margin to position the canvas
+      }}
     />
   );
 };
